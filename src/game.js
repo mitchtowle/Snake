@@ -86,20 +86,20 @@ class Game {
         context.fillStyle = "#000000";
         context.fillRect(0, 0, WIDTH, HEIGHT);
 
-        if(this.gameOver) {
-            console.log("drawing game over text")
-            context.fillStyle = "#FFFFFF"
-            context.font = "48px consolas"
-            let textMeasure = context.measureText("GAME OVER")
-            context.fillText("GAME OVER", WIDTH/2 - textMeasure.width / 2, HEIGHT/2, WIDTH)
-        }
-
         if(this.snake != null) {
             this.snake.draw(context);
         }
 
         if(this.food != null) {
             this.drawFood(context);
+        }
+
+        if(this.gameOver) {
+            console.log("drawing game over text")
+            context.fillStyle = "#FFFFFF"
+            context.font = "48px consolas"
+            let textMeasure = context.measureText("GAME OVER")
+            context.fillText("GAME OVER", WIDTH/2 - textMeasure.width / 2, HEIGHT/2, WIDTH)
         }
     }
 }
